@@ -1,4 +1,4 @@
 LeetCode Playground
 -------------------
 
-These are my solutions of `LeetCode OJ <https://oj.leetcode.com>`.
+These are my solutions on `LeetCode OJ <https://oj.leetcode.com>`_.
