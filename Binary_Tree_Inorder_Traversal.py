@@ -14,17 +14,17 @@ class Solution:
         if root is None:
             return []
         result = []
-        nodes = [(root, False, False)]
+        nodes = [(root, 0)]
         while len(nodes) != 0:
-            last, has_left, has_right = nodes.pop()
-            if not has_left:
-                nodes.append((last, True, False))
+            last, state = nodes.pop()
+            if state == 0:
+                nodes.append((last, 1))
                 if last.left is not None:
-                    nodes.append((last.left, False, False))
-            elif not has_right:
-                nodes.append((last, True, True))
+                    nodes.append((last.left, 0))
+            elif state == 1:
+                nodes.append((last, 2))
                 result.append(last.val)
                 if last.right is not None:
-                    nodes.append((last.right, False, False))
+                    nodes.append((last.right, 0))
 
         return result
