@@ -1,0 +1,5 @@
+*.swp
+*~
+*.sublime-*
+*.o
+.DS_Store
