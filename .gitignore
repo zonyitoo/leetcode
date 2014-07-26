@@ -3,3 +3,5 @@
 *.sublime-*
 *.o
 .DS_Store
+a.out
+*.pyc
