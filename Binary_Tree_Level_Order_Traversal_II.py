@@ -7,9 +7,9 @@
 
 
 class Solution:
+
     # @param root, a tree node
     # @return a list of lists of integers
-
     def levelOrderBottom(self, root):
         level = []
         if root is None:

@@ -7,9 +7,9 @@
 
 
 class Solution:
+
     # @param root, a tree node
     # @return a list of integers
-
     def preorderTraversal(self, root):
         if root is None:
             return []

@@ -6,9 +6,9 @@
 
 
 class Solution:
+
     # @param two ListNodes
     # @return a ListNode
-
     def mergeTwoLists(self, l1, l2):
         if l1 is None:
             return l2

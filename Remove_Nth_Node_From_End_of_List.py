@@ -6,8 +6,8 @@
 
 
 class Solution:
-    # @return a ListNode
 
+    # @return a ListNode
     def removeNthFromEnd(self, head, n):
         if head is None:
             return None
@@ -35,16 +35,16 @@ class Solution:
             slow.next = slow.next.next
             return head
 
+if __name__ == '__main__':
+    class ListNode:
 
-class ListNode:
+        def __init__(self, x):
+            self.val = x
+            self.next = None
 
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+    head = ListNode(1)
+    head.next = ListNode(2)
+    head.next.next = ListNode(3)
 
-head = ListNode(1)
-head.next = ListNode(2)
-head.next.next = ListNode(3)
-
-s = Solution()
-s.removeNthFromEnd(head, 2)
+    s = Solution()
+    s.removeNthFromEnd(head, 2)

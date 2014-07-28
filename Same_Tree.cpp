@@ -1,3 +1,14 @@
+#ifndef NULL
+#define NULL 0
+#endif
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x): val(x), left(NULL), right(NULL) {}
+};
+
 /**
  * Definition for binary tree
  * struct TreeNode {

@@ -1,3 +1,15 @@
+#include <queue>
+using std::queue;
+using std::pair;
+using std::make_pair;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x): val(x), left(NULL), right(NULL) {}
+};
+
 /**
  * Definition for binary tree
  * struct TreeNode {
@@ -7,11 +19,6 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-#include <queue>
-using std::queue;
-using std::pair;
-using std::make_pair;
-
 class Solution {
 public:
     int maxDepth(TreeNode *root) {

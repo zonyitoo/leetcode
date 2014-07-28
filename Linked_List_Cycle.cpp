@@ -1,3 +1,13 @@
+#ifndef NULL
+#define NULL 0
+#endif
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x): val(x), next(NULL) {}
+};
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
