@@ -1,9 +1,20 @@
 class Solution:
 
-    # @param haystack, a string
-    # @param needle, a string
-    # @return a string or None
     def strStr(self, haystack, needle):
+        '''
+        Find a substring (needle) in haystack.
+
+        :param haystack: haystack
+        :type haystack: str
+        :param needle: needle
+        :type needle: str
+        :return: a string or None
+
+        Usage:
+            >>> s = Solution()
+            >>> s.strStr("example hello", "example")
+
+        '''
         pos = self.sunday(haystack, needle)
         return haystack[pos:] if pos != -1 else None
 
