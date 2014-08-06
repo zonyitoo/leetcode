@@ -7,10 +7,10 @@
 
 
 class Solution:
+
     # @param root, a tree node
     # @param sum, an integer
     # @return a boolean
-
     def hasPathSum(self, root, sum):
         if root is None:
             return False

@@ -25,10 +25,12 @@ public:
 };
 
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 int main() {
     Solution s = Solution();
-    cout << s.pow(10, -1) << endl;
+    assert(s.pow(10, 2) == 100);
+    assert(s.pow(10, -1) == 0.1);
     return 0;
 }

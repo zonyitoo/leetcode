@@ -10,7 +10,7 @@ struct ListNode {
 };
 
 #include <stack>
-using namespace std;
+using std::stack;
 
 /**
  * Definition for singly-linked list.

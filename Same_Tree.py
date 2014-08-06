@@ -7,10 +7,10 @@
 
 
 class Solution:
+
     # @param p, a tree node
     # @param q, a tree node
     # @return a boolean
-
     def isSameTree(self, p, q):
         if self.isSameNode(p, q):
             if p is not None and q is not None:

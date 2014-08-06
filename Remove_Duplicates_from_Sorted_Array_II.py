@@ -1,7 +1,7 @@
 class Solution:
+
     # @param A a list of integers
     # @return an integer
-
     def removeDuplicates(self, A):
         ind, last, count = 0, None, 0
         while ind < len(A):

@@ -1,5 +1,12 @@
 #include <queue>
-using namespace std;
+using std::queue;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x): val(x), left(NULL), right(NULL) {}
+};
 
 /**
  * Definition for binary tree
@@ -36,7 +43,7 @@ public:
             }
 
             if (cur.node->left != NULL) {
-                q.push(Node(cur.node->left, cur.curnum * 10 + cur.node->right->val));
+                q.push(Node(cur.node->left, cur.curnum * 10 + cur.node->left->val));
             }
             if (cur.node->right != NULL) {
                 q.push(Node(cur.node->right, cur.curnum * 10 + cur.node->right->val));

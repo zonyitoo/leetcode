@@ -72,10 +72,10 @@ class LRUCache:
             self.lru_list.erase(front)
             del self.key_map[front.value[0]]
 
-
-c = LRUCache(1)
-c.set(2, 1)
-print(c.get(2))
-c.set(3, 2)
-print(c.get(2))
-print(c.get(3))
+if __name__ == '__main__':
+    c = LRUCache(1)
+    c.set(2, 1)
+    assert c.get(2) == 1
+    c.set(3, 2)
+    assert c.get(2) == -1
+    assert c.get(3) == 2
