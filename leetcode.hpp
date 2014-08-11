@@ -13,3 +13,9 @@ struct TreeNode {
     TreeNode *left, *right;
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
 };
+
+struct TreeLinkNode {
+    int val;
+    TreeLinkNode *left, *right, *next;
+    TreeLinkNode(int x): val(x), left(nullptr), right(nullptr), next(nullptr) {}
+};

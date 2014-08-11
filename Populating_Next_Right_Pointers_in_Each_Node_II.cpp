@@ -1,8 +1,7 @@
-#include <queue>
-using std::queue;
-
 #include "leetcode.hpp"
 
+#include <queue>
+using std::queue;
 /**
  * Definition for binary tree with next pointer.
  * struct TreeLinkNode {
@@ -27,8 +26,18 @@ public:
                 cur->left->next = cur->right;
                 q.push(cur->left);
             }
-            if (cur->next != nullptr && cur->right != nullptr) {
-                cur->right->next = cur->next->left;
+            if (cur->next != nullptr) {
+                TreeLinkNode *next = cur->next;
+                while (next != nullptr && next->left == nullptr && next->right == nullptr)
+                    next = next->next;
+                if (next != nullptr) {
+                    next = (next->left != nullptr) ? next->left : next->right;
+                    if (cur->right != nullptr) {
+                        cur->right->next = next;
+                    } else if (cur->left != nullptr) {
+                        cur->left->next = next;
+                    }
+                }
             }
             if (cur->right != nullptr) {
                 q.push(cur->right);

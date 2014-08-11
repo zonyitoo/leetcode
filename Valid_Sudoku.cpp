@@ -4,8 +4,7 @@ using std::vector;
 class Solution {
 public:
     bool isValidSudoku(const vector<vector<char>> &board) {
-        vector<int> validrow(9), validcol(9);
-        vector<int> validsq(9);
+        vector<int> validrow(9), validcol(9), validsq(9);
         for (int i = 0; i < board.size(); ++i) {
             for (int j = 0; j < board[i].size(); ++j) {
                 if (board[i][j] == '.') continue;
