@@ -7,7 +7,7 @@ class Solution:
         return result
 
     def __solve(self, result, num, xlimit, ylimit):
-        if xlimit[0] >= xlimit[1] and ylimit[0] >= ylimit[1]:
+        if xlimit[0] >= xlimit[1] or ylimit[0] >= ylimit[1]:
             return
 
         for y in range(*ylimit):
