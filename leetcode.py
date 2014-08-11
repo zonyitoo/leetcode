@@ -41,3 +41,23 @@ def tree_to_str(root):
                 queue.append(cur.left)
                 queue.append(cur.right)
     return '{%s}' % ','.join(nodes)
+
+
+# Definition for singly-linked list.
+class ListNode:
+
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+def list_to_str(head):
+
+    def __recursive(head):
+        if head is None:
+            return
+        yield head.val
+        for i in __recursive(head.next):
+            yield i
+
+    return '[%s]' % ','.join(__recursive(head))
