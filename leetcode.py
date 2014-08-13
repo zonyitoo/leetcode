@@ -56,8 +56,20 @@ def list_to_str(head):
     def __recursive(head):
         if head is None:
             return
-        yield head.val
+        yield str(head.val)
         for i in __recursive(head.next):
-            yield i
+            yield str(i)
 
     return '[%s]' % ','.join(__recursive(head))
+
+
+def generate_list(lst):
+    if len(lst) == 0:
+        return None
+
+    head = ListNode(lst[0])
+    cur = head
+    for item in lst[1:]:
+        cur.next = ListNode(item)
+        cur = cur.next
+    return head
