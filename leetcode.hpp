@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdio>
+#include <vector>
 
 struct ListNode {
     int val;
@@ -47,5 +48,11 @@ ListNode *generate_list(Iterator beg, Iterator end) {
     }
     return head;
 }
+
+struct UndirectedGraphNode {
+    int label;
+    std::vector<UndirectedGraphNode *> neighbors;
+    UndirectedGraphNode(int x): label(x) {}
+};
 
 #endif
