@@ -1,14 +1,13 @@
-#include <queue>
-using std::queue;
-
 #include "leetcode.hpp"
 
+#include <queue>
+using std::queue;
 /**
  * Definition for binary tree with next pointer.
  * struct TreeLinkNode {
  *  int val;
  *  TreeLinkNode *left, *right, *next;
- *  TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+ *  TreeLinkNode(int x) : val(x), left(nullptr), right(nullptr), next(nullptr) {}
  * };
  */
 class Solution {

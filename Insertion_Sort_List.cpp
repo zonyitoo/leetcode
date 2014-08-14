@@ -1,20 +1,11 @@
-
-#ifndef NULL
-#define NULL 0
-#endif
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x): val(x), next(NULL) {}
-};
+#include "leetcode.hpp"
 
 /**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
 class Solution {
@@ -25,10 +16,10 @@ public:
 
         ListNode *curpnt = &tmphead;
         ListNode *mvpnt = &tmphead;
-        while (mvpnt->next != NULL) {
+        while (mvpnt->next != nullptr) {
             ListNode *nminpnt = mvpnt;
             mvpnt = mvpnt->next;
-            while (mvpnt->next != NULL) {
+            while (mvpnt->next != nullptr) {
                 if (mvpnt->next->val < nminpnt->next->val) {
                     nminpnt = mvpnt;
                 }

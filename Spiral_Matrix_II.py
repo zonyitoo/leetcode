@@ -24,8 +24,3 @@ class Solution:
             num += 1
 
         self.__solve(result, num, (xlimit[0] + 1, xlimit[1] - 1), (ylimit[0] + 1, ylimit[1] - 1))
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.generateMatrix(4)

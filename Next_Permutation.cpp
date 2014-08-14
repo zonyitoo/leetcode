@@ -45,15 +45,3 @@ private:
     }
 };
 
-int main() {
-    Solution s;
-    vector<int> num {1, 1, 5};
-    while (true) {
-        s.nextPermutation(num);
-        for (auto &item : num) {
-            printf("%d ", item);
-        }
-        printf("\n");
-    }
-    return 0;
-}

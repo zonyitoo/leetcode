@@ -14,12 +14,3 @@ class Solution:
             elif p:
                 stack.append(p)
         return '/' + '/'.join(stack)
-
-
-if __name__ == '__main__':
-    s = Solution()
-    assert s.simplifyPath('/home/') == '/home'
-    assert s.simplifyPath('/a/./b/../../c/') == '/c'
-    assert s.simplifyPath('/../c/') == '/c'
-    assert s.simplifyPath('/.') == '/'
-    assert s.simplifyPath('/..') == '/'

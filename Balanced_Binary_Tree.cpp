@@ -1,11 +1,6 @@
-#include <iostream>
+#include "leetcode.hpp"
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x): val(x), left(NULL), right(NULL) {}
-};
+#include <iostream>
 
 #define ABS(value) (((value) > 0) ? (value) : (0 - (value)))
 
@@ -15,13 +10,13 @@ struct TreeNode {
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
  * };
  */
 class Solution {
 public:
     bool isBalanced(TreeNode *root) {
-        if (root == NULL)
+        if (root == nullptr)
             return true;
         int dummy;
         return treeDepthTraversal(root, dummy);
@@ -29,7 +24,7 @@ public:
 
 private:
     bool treeDepthTraversal(TreeNode *root, int &depth) {
-        if (root == NULL) {
+        if (root == nullptr) {
             depth = 0;
             return true;
         }
@@ -48,9 +43,3 @@ private:
     }
 };
 
-int main() {
-    TreeNode *head = new TreeNode(1);
-    head->left = new TreeNode(2);
-    std::cout << std::boolalpha << Solution().isBalanced(head) << std::endl;
-    return 0;
-}

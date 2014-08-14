@@ -1,4 +1,4 @@
-from leetcode import ListNode, generate_list, list_to_str
+from leetcode import ListNode
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -33,8 +33,3 @@ class Solution:
         first.next.next = fast
         first.next = slow
         return fakehead.next
-
-if __name__ == '__main__':
-    s = Solution()
-    lst = generate_list([1, 2, 3, 4, 5])
-    print list_to_str(s.reverseBetween(lst, 2, 4))

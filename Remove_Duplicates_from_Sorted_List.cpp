@@ -1,28 +1,20 @@
-#ifndef NULL
-#define NULL 0
-#endif
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x): val(x), next(NULL) {}
-};
+#include "leetcode.hpp"
 
 /**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
 class Solution {
 public:
     ListNode *deleteDuplicates(ListNode *head) {
-        if (head == NULL)
+        if (head == nullptr)
             return head;
         ListNode *cur = head->next, *last = head;
-        while (cur != NULL) {
+        while (cur != nullptr) {
             if (cur->val == last->val) {
                 last->next = cur->next;
                 delete cur;

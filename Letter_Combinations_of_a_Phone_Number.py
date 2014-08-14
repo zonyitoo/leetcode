@@ -24,8 +24,3 @@ class Solution:
             for rp in rest_parts:
                 result.append(c + rp)
         return result
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.letterCombinations("23")

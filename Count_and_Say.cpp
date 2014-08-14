@@ -30,15 +30,3 @@ public:
     }
 };
 
-#include <iostream>
-using std::cout;
-using std::endl;
-
-int main() {
-    Solution s;
-    for (int i = 1; i < 10; ++i) {
-        cout << s.countAndSay(i) << endl;
-    }
-
-    return 0;
-}

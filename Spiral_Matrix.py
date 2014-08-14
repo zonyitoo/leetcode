@@ -24,21 +24,3 @@ class Solution:
                 result.append(matrix[x][ylimit[0]])
 
         self.__solve(result, matrix, (xlimit[0] + 1, xlimit[1] - 1), (ylimit[0] + 1, ylimit[1] - 1))
-
-if __name__ == '__main__':
-    s = Solution()
-    order = s.spiralOrder([
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ])
-    print(order)
-    order = s.spiralOrder([
-        [2],
-        [3],
-    ])
-    print(order)
-    order = s.spiralOrder([
-        [6, 9, 7],
-    ])
-    print(order)

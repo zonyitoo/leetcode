@@ -14,8 +14,3 @@ class Solution:
             x = (x % leftdiv) // 10
             leftdiv //= 100
         return True
-
-if __name__ == '__main__':
-    s = Solution()
-    assert s.isPalindrome(12321) is True
-    assert s.isPalindrome(111111111111111111111111111111111111111111) is True

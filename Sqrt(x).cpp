@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include <cmath>
 
 class Solution {
@@ -22,12 +20,3 @@ public:
     }
 };
 
-
-int main(int argc, char **argv) {
-    if (argc != 2) {
-        std::cerr << "Invalid argument" << std::endl;
-        return -1;
-    }
-    std::cout << Solution().sqrt(atoi(argv[1])) << std::endl;
-    return 0;
-}

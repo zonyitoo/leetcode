@@ -1,4 +1,4 @@
-from leetcode import ListNode, list_to_str, generate_list
+from leetcode import ListNode
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -33,13 +33,3 @@ class Solution:
         if is_dup:
             par.next = None
         return head.next
-
-
-if __name__ == '__main__':
-    s = Solution()
-    lst = generate_list([1, 1, 1, 2, 3, 3])
-    print list_to_str(s.deleteDuplicates(lst))
-    lst = generate_list([1, 2, 3, 3, 4, 4, 5])
-    print list_to_str(s.deleteDuplicates(lst))
-    lst = generate_list([1, 1])
-    print list_to_str(s.deleteDuplicates(lst))

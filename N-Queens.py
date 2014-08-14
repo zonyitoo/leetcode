@@ -26,8 +26,3 @@ class Solution:
                 yield i
 
             ans.pop()
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.solveNQueens(4)

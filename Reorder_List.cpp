@@ -1,13 +1,4 @@
-
-#ifndef NULL
-#define NULL 0
-#endif
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x): val(x), next(NULL) {}
-};
+#include "leetcode.hpp"
 
 #include <stack>
 using std::stack;
@@ -17,30 +8,30 @@ using std::stack;
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
 class Solution {
 public:
     void reorderList(ListNode *head) {
-        if (head == NULL) {
+        if (head == nullptr) {
             return;
         }
 
         stack<ListNode *> nodes;
         ListNode *cur = head;
-        while (cur != NULL) {
+        while (cur != nullptr) {
             nodes.push(cur);
             cur = cur->next;
         }
 
         cur = head;
-        while (true) {
+        for (;;) {
             ListNode *front = nodes.top();
             nodes.pop();
 
             if (front == cur || front == cur->next) {
-                front->next = NULL;
+                front->next = nullptr;
                 break;
             }
 

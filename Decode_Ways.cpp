@@ -24,15 +24,3 @@ public:
     }
 };
 
-#include <cassert>
-
-int main(int argc, char **argv) {
-    Solution s;
-    assert(s.numDecodings("12") == 2);
-    assert(s.numDecodings("") == 0);
-    assert(s.numDecodings("0") == 0);
-    assert(s.numDecodings("00") == 0);
-    assert(s.numDecodings("10") == 1);
-    assert(s.numDecodings("01") == 0);
-    return 0;
-}

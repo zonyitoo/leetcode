@@ -1,8 +1,5 @@
 #include <vector>
 using std::vector;
-#include <iostream>
-using std::cout;
-using std::endl;
 
 class Solution {
 public:
@@ -25,21 +22,3 @@ public:
     }
 };
 
-int main() {
-    vector<vector<int>> matrix = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
-    };
-    Solution().rotate(matrix);
-    for (int i = 0; i < matrix.size(); ++ i) {
-        cout << "[";
-        for (int j = 0; j < matrix[i].size(); ++ j) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << "] ";
-    }
-    cout << endl;
-    return 0;
-}

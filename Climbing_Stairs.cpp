@@ -15,12 +15,3 @@ public:
         return dp[n];
     }
 };
-
-#include <iostream>
-using std::cout;
-using std::endl;
-#include <cassert>
-int main(int argc, char **argv) {
-    assert(Solution().climbStairs(10) == 89);
-    return 0;
-}

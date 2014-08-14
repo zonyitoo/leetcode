@@ -1,8 +1,5 @@
 #include <vector>
 using std::vector;
-#include <iostream>
-using std::cout;
-using std::endl;
 
 class Solution {
 public:
@@ -38,12 +35,3 @@ private:
     }
 };
 
-int main() {
-    int arr[] = {5, 7, 7, 8, 8, 10};
-    auto result = Solution().searchRange(arr, 6, 8);
-    for (auto &item : result) {
-        cout << item << " ";
-    }
-    cout << endl;
-    return 0;
-}

@@ -1,27 +1,19 @@
-#ifndef NULL
-#define NULL 0
-#endif
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x): val(x), next(NULL) {}
-};
+#include "leetcode.hpp"
 
 /**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
 class Solution {
 public:
     ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
-        if (l1 == NULL) {
+        if (l1 == nullptr) {
             return l2;
-        } else if (l2 == NULL) {
+        } else if (l2 == nullptr) {
             return l1;
         }
 
@@ -38,7 +30,7 @@ public:
 
         ListNode *curpnt = head;
 
-        while (pnt1 != NULL && pnt2 != NULL) {
+        while (pnt1 != nullptr && pnt2 != nullptr) {
             if (pnt1->val <= pnt2->val) {
                 curpnt->next = pnt1;
                 pnt1 = pnt1->next;
@@ -50,9 +42,9 @@ public:
             curpnt = curpnt->next;
         }
 
-        if (pnt1 != NULL) {
+        if (pnt1 != nullptr) {
             curpnt->next = pnt1;
-        } else if (pnt2 != NULL) {
+        } else if (pnt2 != nullptr) {
             curpnt->next = pnt2;
         }
 

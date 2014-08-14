@@ -37,9 +37,3 @@ class Solution:
         for s in strs:
             t.add_string(s)
         return t.longest_common_prefix()
-
-
-if __name__ == '__main__':
-    s = Solution()
-    ret = s.longestCommonPrefix(['abc', 'aaaa'])
-    assert ret == 'a'

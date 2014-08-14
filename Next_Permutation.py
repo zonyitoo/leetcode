@@ -22,10 +22,3 @@ class Solution:
             if idx == 0:
                 num.reverse()
                 return num
-
-if __name__ == '__main__':
-    s = Solution()
-    lst = [1]
-    while True:
-        print lst
-        s.nextPermutation(lst)

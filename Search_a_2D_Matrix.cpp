@@ -1,9 +1,5 @@
 #include <vector>
 using std::vector;
-#include <iostream>
-using std::cout;
-using std::endl;
-#include <cassert>
 
 class Solution {
 public:
@@ -40,19 +36,3 @@ public:
     }
 };
 
-int main() {
-    vector<vector<int>> matrix = {
-        {1}, {2, 3}
-    };
-
-    assert(Solution().searchMatrix(matrix, 2) == true);
-
-    matrix = {
-        {1, 3, 5, 7},
-        {10, 11, 16, 20},
-        {23, 30, 34, 50}
-    };
-    assert(Solution().searchMatrix(matrix, 10) == true);
-
-    return 0;
-}

@@ -14,6 +14,7 @@ public:
         return ips;
     }
 
+private:
     void process(vector<string> &ips, vector<string> &buf, const string &s, int pos) {
         if (buf.size() == 3) {
             int remain = s.size() - pos;
@@ -45,15 +46,3 @@ public:
     }
 };
 
-#include <iostream>
-using namespace std;
-
-int main() {
-    vector<string> result = Solution().restoreIpAddresses("172162541");
-    cout << "[";
-    for (int i = 0; i < result.size(); ++i) {
-        cout << "\"" << result[i] << "\" ";
-    }
-    cout << "]" << endl;
-    return 0;
-}

@@ -1,7 +1,3 @@
-#include <iostream>
-using std::cout;
-using std::endl;
-#include <cassert>
 #include <string>
 using std::string;
 #include <vector>
@@ -169,10 +165,3 @@ public:
     }
 };
 
-int main(int argc, char **argv) {
-    Solution s;
-    assert(s.longestValidParentheses("(()") == 2);
-    assert(s.longestValidParentheses(")()())") == 4);
-    assert(s.longestValidParentheses("") == 0);
-    return 0;
-}

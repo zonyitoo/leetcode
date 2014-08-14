@@ -1,26 +1,18 @@
-#ifndef NULL
-#define NULL 0
-#endif
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x): val(x), next(NULL) {}
-};
+#include "leetcode.hpp"
 
 /**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
         ListNode *follower = head;
-        while (head != NULL && head->next != NULL) {
+        while (head != nullptr && head->next != nullptr) {
             follower = follower->next;
             head = head->next->next;
 

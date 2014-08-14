@@ -1,20 +1,11 @@
-
-#include <iostream>
-using std::cout;
-using std::endl;
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x): val(x), next(nullptr) {}
-};
+#include "leetcode.hpp"
 
 /**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
  * };
  */
 class Solution {
@@ -73,21 +64,3 @@ private:
     }
 };
 
-int main() {
-    int initvals[] = {1, 3, 5, 7, 2, 4, 6, 8};
-    ListNode *head = nullptr;
-    ListNode **cur = &head;
-    for (auto &val : initvals) {
-        *cur = new ListNode(val);
-        cur = &(*cur)->next;
-    }
-
-    head = Solution().sortList(head);
-
-    while (head != nullptr) {
-        cout << head->val << " " ;
-        head = head->next;
-    }
-    cout << endl;
-    return 0;
-}

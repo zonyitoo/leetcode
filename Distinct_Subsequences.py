@@ -16,9 +16,3 @@ class Solution:
                 if i > j:
                     dp[i][j] += dp[i - 1][j]
         return dp[len(S) - 1][len(T) - 1]
-
-if __name__ == '__main__':
-    s = Solution()
-    print(s.numDistinct('rabbbit', 'rabbit'))
-    print(s.numDistinct('aabdbaabeeadcbbdedacbbeecbabebaeeecaeabaedadcbdbcdaabebdadbbaeabdadeaabbabbecebbebcaddaacccebeaeedababedeacdeaaaeeaecbe', 'bddabdcae'))
-    print(s.numDistinct("", "a"))

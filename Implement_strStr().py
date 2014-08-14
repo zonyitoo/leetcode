@@ -32,8 +32,3 @@ class Solution:
             else:
                 return pos
         return -1
-
-if __name__ == '__main__':
-    s = Solution()
-    assert s.strStr("mississippi", "a") is None
-    assert s.strStr("this is an example.", "example") is not None

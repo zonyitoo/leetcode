@@ -1,4 +1,4 @@
-from leetcode import TreeNode, tree_to_str
+from leetcode import TreeNode
 
 # Definition for a  binary tree node
 # class TreeNode:
@@ -25,9 +25,3 @@ class Solution:
         root.right = self.__buildTree(inorder[idx + 1:], postorder, idx_itr)
         root.left = self.__buildTree(inorder[:idx], postorder, idx_itr)
         return root
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print(tree_to_str(s.buildTree([1, 2, 3, 4, 5], [1, 3, 5, 4, 2])))
-    print(tree_to_str(s.buildTree([1, 2, 3, 4], [3, 2, 4, 1])))

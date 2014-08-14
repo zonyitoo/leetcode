@@ -1,5 +1,3 @@
-#include <cstdio>
-using std::printf;
 #include <cstring>
 using std::strlen;
 
@@ -40,8 +38,3 @@ private:
         return -1;
     }
 };
-
-int main(int argc, char **argv) {
-    auto s = Solution();
-    printf("%s\n", s.strStr("this is a simple example.", "example."));
-}

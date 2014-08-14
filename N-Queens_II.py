@@ -14,8 +14,3 @@ class Solution:
             remain -= pos
             for i in self.dfs(fullrow, currow + pos, (lcross + pos) << 1, (rcross + pos) >> 1):
                 yield i
-
-if __name__ == '__main__':
-    s = Solution()
-    assert s.totalNQueens(4) == 2
-    assert s.totalNQueens(9) == 352

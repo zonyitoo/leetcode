@@ -26,27 +26,3 @@ private:
     }
 };
 
-#include <iostream>
-using std::cout;
-using std::endl;
-
-int main() {
-    vector<int> s = {1, 2, 3};
-    auto ret = Solution().subsets(s);
-    cout << "[" << endl;
-    for (auto &subs : ret) {
-        cout << "\t[";
-        bool begin = false;
-        for (auto &item : subs) {
-            if (begin) {
-                cout << ",";
-            } else {
-                begin = true;
-            }
-            cout << item;
-        }
-        cout << "]," << endl;
-    }
-    cout << "]" << endl;
-    return 0;
-}

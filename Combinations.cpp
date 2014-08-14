@@ -1,13 +1,11 @@
-#include <iostream>
-using std::cout;
-using std::endl;
+#include "leetcode.hpp"
 
 #include <vector>
 using std::vector;
 
 class Solution {
 public:
-    vector<vector<int> > combine(int n, int k) {
+    vector<vector<int>> combine(int n, int k) {
         vector<vector<int>> result;
         vector<int> buf;
         solve(result, buf, n, 1, k);
@@ -29,6 +27,9 @@ public:
 };
 
 int main() {
+    using std::cout;
+    using std::endl;
+
     auto ret = Solution().combine(4, 3);
     cout << "[" << endl;
     for (auto &comb : ret) {

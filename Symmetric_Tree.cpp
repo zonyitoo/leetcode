@@ -1,14 +1,9 @@
+#include "leetcode.hpp"
+
 #include <queue>
 using std::queue;
 #include <deque>
 using std::deque;
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
-};
 
 /**
  * Definition for binary tree
@@ -16,7 +11,7 @@ struct TreeNode {
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
  * };
  */
 class Solution {

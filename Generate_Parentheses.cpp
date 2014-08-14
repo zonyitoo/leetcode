@@ -33,15 +33,3 @@ private:
     }
 };
 
-#include <iostream>
-using std::cout;
-using std::endl;
-
-int main() {
-    auto ret = Solution().generateParenthesis(3);
-    for (auto &item : ret) {
-        cout << item << " ";
-    }
-    cout << endl;
-    return 0;
-}
