@@ -8,7 +8,3 @@ class Solution:
             tmp += [(result[idx] | (1 << pos)) for idx in range(len(result) - 1, -1, -1)]
             result = tmp
         return result
-
-if __name__ == '__main__':
-    s = Solution()
-    assert s.grayCode(2) == [0, 1, 3, 2]

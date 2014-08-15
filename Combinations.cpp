@@ -12,6 +12,7 @@ public:
         return result;
     }
 
+private:
     void solve(vector<vector<int>> &result, vector<int> &buf, int n, int current, int k) {
         if (buf.size() == k) {
             result.push_back(buf);
@@ -25,25 +26,3 @@ public:
         }
     }
 };
-
-int main() {
-    using std::cout;
-    using std::endl;
-
-    auto ret = Solution().combine(4, 3);
-    cout << "[" << endl;
-    for (auto &comb : ret) {
-        cout << "\t[";
-        auto itr = comb.begin();
-        if (itr != comb.end())
-            cout << *itr;
-        ++itr;
-        while (itr != comb.end()) {
-            cout << "," << *itr;
-            ++itr;
-        }
-        cout << "]," << endl;
-    }
-    cout << "]" << endl;
-    return 0;
-}

@@ -25,8 +25,3 @@ class Solution:
                 visited[idx] = False
                 last = n
         return result
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.permuteUnique([1, 1, 1, 1, 1, 2])

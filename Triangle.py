@@ -14,8 +14,3 @@ class Solution:
             currow = tmprow
             rowidx -= 1
         return currow[0]
-
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.minimumTotal([[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]])

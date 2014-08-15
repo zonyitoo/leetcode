@@ -22,13 +22,3 @@ public:
         return true;
     }
 };
-
-#include <cassert>
-int main(int argc, char **argv) {
-    Solution s;
-    assert(s.isPalindrome("A man, a plan, a canal: Panama") == true);
-    assert(s.isPalindrome("race a car") == false);
-    assert(s.isPalindrome(" ") == true);
-    assert(s.isPalindrome("1a2") == false);
-    return 0;
-}

@@ -16,9 +16,3 @@ class Solution:
             if lmax[idx] > high and rmax[idx] > high:
                 water += min(lmax[idx], rmax[idx]) - high
         return water
-
-
-if __name__ == '__main__':
-    s = Solution()
-    assert s.trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]) == 6
-    assert s.trap([2, 0, 2]) == 2

@@ -26,15 +26,3 @@ private:
         return x >= 0 && x < m && y >= 0 && y < n;
     }
 };
-
-#include <cassert>
-
-int main(int argc, char **argv) {
-    Solution s;
-    assert(s.uniquePaths(1, 1) == 1);
-    assert(s.uniquePaths(1, 2) == 1);
-    assert(s.uniquePaths(2, 1) == 1);
-    assert(s.uniquePaths(2, 2) == 2);
-
-    return 0;
-}

@@ -11,6 +11,9 @@ using std::make_tuple;
 using std::tie;
 using std::min;
 
+/*
+ * LeetCode's judge system does not support bitset in STL.
+ */
 template <size_t N>
 class bitset {
 public:
@@ -119,38 +122,3 @@ private:
         return x / 3 * 3 + (y / 3);
     }
 };
-
-#include <iostream>
-#include <ctime>
-using namespace std;
-
-int main(int argc, char **argv) {
-    /*
-    The most difficult Sudoku by a scientist in Finland.
-    */
-    vector<vector<char>> board = {
-        {'8', '.', '.', '.', '.', '.', '.', '.', '.'},
-        {'.', '.', '3', '6', '.', '.', '.', '.', '.'},
-        {'.', '7', '.', '.', '9', '.', '2', '.', '.'},
-        {'.', '5', '.', '.', '.', '7', '.', '.', '.'},
-        {'.', '.', '.', '.', '4', '5', '7', '.', '.'},
-        {'.', '.', '.', '1', '.', '.', '.', '3', '.'},
-        {'.', '.', '1', '.', '.', '.', '.', '6', '8'},
-        {'.', '.', '8', '5', '.', '.', '.', '1', '.'},
-        {'.', '9', '.', '.', '.', '.', '4', '.', '.'}
-    };
-
-    Solution s;
-    const clock_t beg = clock();
-    s.solveSudoku(board);
-    const clock_t end = clock();
-    cout << "Solved in " << (double) (end - beg) / CLOCKS_PER_SEC << " seconds\n";
-
-    for (auto &row : board) {
-        for (auto &n : row) {
-            cout << n << " ";
-        }
-        cout << "\n";
-    }
-    return 0;
-}

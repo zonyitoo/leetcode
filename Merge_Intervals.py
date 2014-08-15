@@ -108,14 +108,3 @@ class Solution:
             segm_tree.add_interval(itvl.start, itvl.end)
 
         return segm_tree.get_intervals()
-
-
-if __name__ == '__main__':
-    s = Solution()
-    ret = s.merge([Interval(1, 3), Interval(2, 6), Interval(8, 10), Interval(15, 18)])
-    print(ret)
-    ret = s.merge([Interval(1, 4), Interval(0, 0)])
-    print(ret)
-    ret = s.merge([Interval(4, 5), Interval(2, 4), Interval(4, 6), Interval(3, 4),
-                  Interval(0, 0), Interval(1, 1), Interval(3, 5), Interval(2, 2)])
-    print(ret)
