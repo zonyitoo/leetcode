@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdio>
 #include <vector>
+#include <queue>
 
 struct ListNode {
     int val;
@@ -16,6 +17,33 @@ struct TreeNode {
     TreeNode *left, *right;
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
 };
+
+std::ostream &operator<<(std::ostream &os, TreeNode *node) {
+    std::queue<TreeNode *> q;
+    q.push(node);
+    os << "{";
+    bool is_first = true;
+    while (!q.empty()) {
+        TreeNode *cur = q.front();
+        q.pop();
+        if (!is_first) {
+            os << ",";
+        } else {
+            is_first = false;
+        }
+        if (cur == nullptr) {
+            os << "#";
+        } else {
+            os << cur->val;
+            if (cur->left != nullptr || cur->right != nullptr) {
+                q.push(cur->left);
+                q.push(cur->right);
+            }
+        }
+    }
+    os << "}";
+    return os;
+}
 
 struct TreeLinkNode {
     int val;
