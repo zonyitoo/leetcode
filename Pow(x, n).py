@@ -5,7 +5,7 @@ class Solution:
     # @return a float
     def pow(self, x, n):
         if n < 0:
-            return 1.0 / self.pow(x, n * -1)
+            return 1.0 / self.pow(x, -n)
         elif n == 0:
             return 1.0
 
