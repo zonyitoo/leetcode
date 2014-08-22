@@ -39,13 +39,3 @@ public:
         return s.substr(left, right - left + 1);
     }
 };
-
-
-#include <iostream>
-using namespace std;
-
-int main() {
-    Solution s;
-    cout << s.longestPalindrome("a") << endl;
-    return 0;
-}
