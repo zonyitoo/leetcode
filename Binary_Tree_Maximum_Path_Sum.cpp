@@ -1,5 +1,7 @@
 #include "leetcode.hpp"
 
+#include <climits>
+#include <algorithm>
 /**
  * Definition for binary tree
  * struct TreeNode {
@@ -12,39 +14,35 @@
 class Solution {
 public:
     int maxPathSum(TreeNode *root) {
-        if (root == nullptr) {
-            return 0;
-        }
-
-        int sum = root->val;
-        int right = solve(root->right);
-        if (right >= 0) {
-            sum += right;
-            int left = solve(root->left);
-            if (left >= 0) {
-                sum += left;
-            }
-        }
-        return sum;
+        int ans = INT_MIN;
+        solve(root, ans);
+        return ans;
     }
 
 private:
-    int solve(TreeNode *root) {
+    int solve(TreeNode *root, int &ans) {
         if (root == nullptr) {
-            return 0;
+            return INT_MIN;
         }
 
-        if (root->right != nullptr) {
-            return solve(root->right) + root->val;
-        } else if (root->left != nullptr) {
-            int left = solve(root->left);
-            if (left < 0) {
-                return root->val;
-            } else {
-                return root->val + left;
-            }
-        } else {
+        ans = std::max(ans, root->val);
+
+        if (root->left == nullptr && root->right == nullptr) {
             return root->val;
+        } else if (root->left != nullptr && root->right == nullptr) {
+            int tmp = root->val + solve(root->left, ans);
+            ans = std::max(ans, tmp);
+            return std::max(root->val, tmp);
+        } else if (root->left == nullptr && root->right != nullptr) {
+            int tmp = root->val + solve(root->right, ans);
+            ans = std::max(ans, tmp);
+            return std::max(root->val, tmp);
         }
+
+        int left = solve(root->left, ans);
+        int right = solve(root->right, ans);
+        ans = std::max(ans, root->val + std::max(left, right));
+        ans = std::max(ans, root->val + left + right);
+        return std::max(root->val, root->val + std::max(left, right));
     }
 };
