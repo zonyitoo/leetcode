@@ -18,7 +18,7 @@ struct TreeNode {
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
 };
 
-std::ostream &operator<<(std::ostream &os, TreeNode *node) {
+std::ostream& operator<<(std::ostream& os, TreeNode *node) {
     std::queue<TreeNode *> q;
     q.push(node);
     os << "{";
@@ -51,7 +51,7 @@ struct TreeLinkNode {
     TreeLinkNode(int x): val(x), left(nullptr), right(nullptr), next(nullptr) {}
 };
 
-std::ostream &operator<<(std::ostream &os, ListNode *node) {
+std::ostream& operator<<(std::ostream& os, ListNode *node) {
     os << "[";
     if (node != nullptr) {
         os << node->val;
@@ -75,6 +75,14 @@ ListNode *generate_list(Iterator beg, Iterator end) {
         ++beg;
     }
     return head;
+}
+
+void delete_list(ListNode *lst) {
+    while (lst != nullptr) {
+        ListNode *cur = lst;
+        lst = lst->next;
+        delete cur;
+    }
 }
 
 struct UndirectedGraphNode {
