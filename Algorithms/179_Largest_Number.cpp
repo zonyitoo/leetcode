@@ -23,6 +23,12 @@ public:
             sstream << s;
         }
 
-        return std::move(sstream.str());
+        string result = sstream.str();
+        std::reverse(result.begin(), result.end());
+        while (result.size() > 1 && result.back() == '0') {
+            result.pop_back();
+        }
+        std::reverse(result.begin(), result.end());
+        return result;
     }
 };
