@@ -1,0 +1,41 @@
+#!/bin/bash
+
+while [[ $# -ne "0" ]]; do
+
+    FILE_NAME=$(basename "$1")
+    FILE_SUFFIX=${FILE_NAME##*.}
+    FILE_NAME=${FILE_NAME%.*}
+
+    case "$FILE_SUFFIX" in
+        cpp|cc) (
+                set -x;
+                g++ $1 -std=c++11 -o "${FILE_NAME}"
+                if [[ $? -ne "0" ]]; then
+                    exit $?
+                fi
+                ./$FILE_NAME;
+                rm ./$FILE_NAME
+            )
+            ;;
+        c) (
+                set -x;
+                gcc $1 -std=c11 -o "${FILE_NAME}"
+                if [[ $? -ne "0" ]]; then
+                    exit $?
+                fi
+                ./$FILE_NAME;
+                rm ./$FILE_NAME
+            )
+            ;;
+        py) (
+                set -x;
+                python "$1"
+            )
+            ;;
+        *)
+            echo "Don't know what to do for \"*.${FILE_SUFFIX}\"";
+            exit 1;
+    esac
+
+    shift 1;
+done
