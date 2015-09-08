@@ -5,6 +5,13 @@
 #include <cstdio>
 #include <vector>
 #include <queue>
+#include <string>
+
+using std::vector;
+using std::queue;
+using std::string;
+using std::cout;
+using std::endl;
 
 struct ListNode {
     int val;
@@ -96,5 +103,27 @@ struct RandomListNode {
     RandomListNode *next, *random;
     RandomListNode(int x): label(x), next(nullptr), random(nullptr) {}
 };
+
+struct Interval {
+    int start;
+    int end;
+    Interval() : start(0), end(0) {}
+    Interval(int s, int e) : start(s), end(e) {}
+};
+
+std::ostream& operator<<(std::ostream& os, const Interval& interval) {
+    os << "[" << interval.start << "," << interval.end << "]";
+    return os;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const vector<T>& v) {
+    os << "[";
+    for (const auto& val : v) {
+        os << val << ",";
+    }
+    os << "]";
+    return os;
+}
 
 #endif
