@@ -6,12 +6,16 @@
 #include <vector>
 #include <queue>
 #include <string>
+#include <unordered_map>
+#include <unordered_set>
 
 using std::vector;
 using std::queue;
 using std::string;
 using std::cout;
 using std::endl;
+using std::unordered_map;
+using std::unordered_set;
 
 struct ListNode {
     int val;
@@ -120,7 +124,7 @@ template <typename T>
 std::ostream& operator<<(std::ostream& os, const vector<T>& v) {
     os << "[";
     for (const auto& val : v) {
-        os << val << ",";
+        os << std::boolalpha << val << ",";
     }
     os << "]";
     return os;
