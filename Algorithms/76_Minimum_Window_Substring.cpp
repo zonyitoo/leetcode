@@ -51,15 +51,3 @@ public:
         return has_found ? s.substr(win_left, win_length) : "";
     }
 };
-
-int main() {
-    const char *s = "ADOBECODEBANC";
-    const char *t = "ABC";
-
-    // const char *s = "a";
-    // const char *t = "a";
-
-    string ret = Solution().minWindow(s, t);
-    cout << ret << endl;
-    return 0;
-}
