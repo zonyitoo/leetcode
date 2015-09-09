@@ -23,9 +23,7 @@ private:
                         vector<bool>& possible,
                         string::const_iterator beg,
                         const string& s,
-                        const unordered_set<string>& wordDict
-                        //const TireTree& tire
-                        ) const {
+                        const unordered_set<string>& wordDict) const {
         const size_t idx = std::distance(s.cbegin(), beg);
         if (beg == s.cend()) {
             string s(stack[0]);
@@ -40,8 +38,21 @@ private:
         bool is_possible = false;
 
         for (const auto& word : wordDict) {
-            const size_t pos = s.find(word, idx);
-            if (pos == idx) {
+            auto cmp = [&]() {
+                if (s.size() - idx < word.size()) {
+                    return false;
+                }
+
+                for (auto i1 = beg, i2 = word.cbegin(); i2 != word.cend(); ++i1, ++i2) {
+                    if (*i1 != *i2) {
+                        return false;
+                    }
+                }
+
+                return true;
+            };
+
+            if (cmp()) {
                 if (!possible[idx + word.size()]) {
                     continue;
                 }
