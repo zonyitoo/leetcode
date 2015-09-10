@@ -8,6 +8,8 @@
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
+#include <map>
+#include <set>
 
 using std::vector;
 using std::queue;
@@ -16,6 +18,8 @@ using std::cout;
 using std::endl;
 using std::unordered_map;
 using std::unordered_set;
+using std::map;
+using std::set;
 
 struct ListNode {
     int val;
@@ -120,12 +124,37 @@ std::ostream& operator<<(std::ostream& os, const Interval& interval) {
     return os;
 }
 
-template <typename T>
-std::ostream& operator<<(std::ostream& os, const vector<T>& v) {
+struct Point {
+    int x;
+    int y;
+    Point() : x(0), y(0) {}
+    Point(int a, int b) : x(a), y(b) {}
+};
+
+std::ostream& operator<<(std::ostream& os, const Point& point) {
+    os << "(" << point.x << "," << point.y << ")";
+    return os;
+}
+
+template <typename F, typename S>
+std::ostream& operator<<(std::ostream& os, const std::pair<F, S>& pair) {
+    os << pair.first << ":" << pair.second;
+    return os;
+}
+
+template <typename Printable, typename Allocator>
+std::ostream& operator<<(std::ostream& os, const vector<Printable, Allocator>& v) {
     os << "[";
-    for (const auto& val : v) {
-        os << std::boolalpha << val << ",";
+
+    auto itr = v.cbegin();
+    if (itr != v.cend()) {
+        os << *itr++;
+
+        while (itr != v.cend()) {
+            os << ", " << *itr;
+        }
     }
+
     os << "]";
     return os;
 }
