@@ -151,7 +151,7 @@ std::ostream& operator<<(std::ostream& os, const vector<Printable, Allocator>& v
         os << *itr++;
 
         while (itr != v.cend()) {
-            os << ", " << *itr;
+            os << ", " << *itr++;
         }
     }
 
